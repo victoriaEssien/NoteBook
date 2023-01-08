@@ -19,6 +19,29 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
         backgroundColor: AppStyle.cardsColor[color_id],
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black38),
+        actions: [
+          PopupMenuButton<int>(
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 1,
+                child: Text("Edit"),
+                onTap: () {
+                  print("Run this function...");
+                },
+              ),
+              PopupMenuItem(
+                value: 2,
+                child: Text("Delete"),
+                onTap: () {
+                  print("Run that function...");
+                },
+              ),
+            ],
+            offset: Offset(0, 100),
+            color: Colors.white,
+            elevation: 2,
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
